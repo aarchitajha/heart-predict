@@ -1,0 +1,75 @@
+# Backend (Go)
+backend/models/*.pkl
+backend/models/*.joblib
+backend/.env
+backend/.env.local
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/.env.local
+frontend/.env.*.local
+frontend/.vercel/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+env/
+
+# ML/Data files
+*.csv
+*.pkl
+*.joblib
+*.model
+*.h5
+*.pth
+backend/ml/models/**
+!backend/ml/model_metadata.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+secrets/
+
+# Large files
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+logs/

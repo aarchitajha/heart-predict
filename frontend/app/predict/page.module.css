@@ -1,0 +1,129 @@
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 3rem 2rem 5rem;
+  }
+}
+
+.header { 
+  text-align: center; 
+  margin-bottom: 2.5rem; 
+}
+
+.title  { 
+  font-size: clamp(1.5rem, 4vw, 1.9rem); 
+  font-weight: 800; 
+}
+
+.sub    { 
+  color: var(--text-muted); 
+  font-size: .9rem; 
+  margin-top: .4rem; 
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+}
+
+.stepBody { 
+  animation: fadeUp .3s ease both; 
+}
+
+.stepTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 520px) { 
+  .grid2 { 
+    grid-template-columns: 1fr 1fr; 
+  } 
+}
+
+.field { 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.hint  { 
+  font-weight: 400; 
+  text-transform: none; 
+  letter-spacing: 0; 
+  color: var(--text-muted); 
+  margin-top: 0.4rem;
+}
+
+/* Toggle */
+.toggle {
+  display: flex;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.toggleBtn {
+  flex: 1;
+  padding: .62rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-head);
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .18s;
+}
+
+.toggleBtn:hover { 
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.toggleActive {
+  background: rgba(66, 133, 244, 0.1) !important;
+  color: var(--googleBlue) !important;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

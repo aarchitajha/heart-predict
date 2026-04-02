@@ -1,0 +1,143 @@
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1.5rem 5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .page {
+    gap: 3rem;
+    padding: 3rem 2rem 5rem;
+  }
+}
+
+.section {
+  animation: fadeUp .4s ease both;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 2.5rem;
+  }
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 700px) { 
+  .grid2 { 
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  } 
+}
+
+.card {
+  animation: fadeUp .5s ease both;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+}
+
+.h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--textMain);
+}
+
+.h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--textMain);
+}
+
+@media (min-width: 768px) {
+  .h2 {
+    font-size: 1.25rem;
+  }
+}
+
+.body {
+  color: var(--text-muted);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  line-height: 1.7;
+}
+
+.warn {
+  font-size: .9rem;
+  background: rgba(251,188,5,.15);
+  color: #b38000;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--googleYellow);
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+.warn strong { 
+  color: #805b00; 
+  font-weight: 700; 
+  margin-right: .5rem; 
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .95rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.list li:last-child { 
+  border: none; 
+  padding-bottom: 0; 
+}
+
+.label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.val {
+  color: var(--textMain);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

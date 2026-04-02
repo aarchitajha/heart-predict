@@ -1,0 +1,65 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+.circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 2px solid var(--border);
+  background: white;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+.circle.active {
+  border-color: var(--googleBlue);
+  background: var(--googleBlue);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.2);
+}
+.circle.done {
+  border-color: var(--googleGreen);
+  background: var(--googleGreen);
+  color: white;
+}
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.label.active { color: var(--googleBlue); }
+.label.done { color: var(--googleGreen); }
+
+.line {
+  position: absolute;
+  top: 16px;
+  left: calc(50% + 16px);
+  right: calc(-50% - 16px);
+  height: 2px;
+  background: var(--border);
+  z-index: -1;
+}
+.doneLine {
+  background: var(--googleGreen);
+}

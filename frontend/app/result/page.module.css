@@ -1,0 +1,242 @@
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 3rem 2rem 5rem;
+  }
+}
+
+/* ── Top ── */
+.top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 580px) { 
+  .top { 
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    padding: 2rem 2.5rem;
+  } 
+}
+
+.gaugeWrap { 
+  display: flex; 
+  justify-content: center; 
+}
+
+.label {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  margin-bottom: .5rem;
+  color: var(--textMain);
+}
+
+.confidence {
+  font-size: .95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.note {
+  font-size: .88rem;
+  color: var(--textMain);
+  line-height: 1.6;
+  border-left: 3px solid var(--border);
+  padding-left: .9rem;
+}
+
+/* ── Sections ── */
+.section {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 2rem 2.5rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--textMain);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+/* ── Probability Bar Chart ── */
+.probChart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.probRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 600px) {
+  .probRow {
+    grid-template-columns: 180px 1fr 60px;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.probLabel {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--textMain);
+}
+
+.probBarContainer {
+  height: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.probBar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.probValue {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* ── Risk factors ── */
+.factors {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .factors {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .factors {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.factor {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  transition: border-color .2s;
+}
+
+.impact_high   { border-color: rgba(234,67,53,.4); }
+.impact_medium { border-color: rgba(251,188,5,.4); }
+.impact_low    { border-color: rgba(52,168,83,.4); }
+
+.factorLabel {
+  font-size: .75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-weight: 600;
+}
+
+.factorValue {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--textMain);
+}
+
+.factorImpact {
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  border-radius: 4px;
+  padding: .25rem .5rem;
+  display: inline-block;
+  width: fit-content;
+}
+
+.high   { background: rgba(234,67,53,.15);  color: var(--googleRed); }
+.medium { background: rgba(251,188,5,.15); color: #d99a00; }
+.low    { background: rgba(52,168,83,.15); color: var(--googleGreen); }
+
+/* ── Tips ── */
+.tips { 
+  list-style: none; 
+  display: flex; 
+  flex-direction: column; 
+  gap: .6rem; 
+  padding: 0;
+  margin: 0;
+}
+
+.tip {
+  display: flex;
+  gap: .75rem;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .9rem 1.1rem;
+  font-size: .95rem;
+  line-height: 1.6;
+  color: var(--textMain);
+}
+
+.tipIcon { 
+  color: var(--googleBlue); 
+  font-weight: 700; 
+  flex-shrink: 0; 
+}
+
+/* ── Actions ── */
+.actions { 
+  display: flex; 
+  gap: 1rem; 
+  flex-wrap: wrap; 
+  background: white; 
+  padding: 1.5rem; 
+  border-radius: 12px; 
+  border: 1px solid var(--border); 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+  justify-content: center; 
+}

@@ -1,0 +1,41 @@
+{
+  "model_name": "GaussianNB (Multi-Class)",
+  "version": "2.0.0",
+  "accuracy": 0.6902,
+  "f1_macro": 0.5877,
+  "n_classes": 6,
+  "class_labels": {
+    "0": "Normal",
+    "1": "Coronary Artery Disorders",
+    "2": "Irregular Heartbeat Disorders",
+    "3": "Weak Heart Muscle Conditions",
+    "4": "Congenital Heart Defects",
+    "5": "Cardiovascular Defects"
+  },
+  "per_class_accuracy": {
+    "Normal": 0.8171,
+    "Coronary Artery Disorders": 0.5806,
+    "Irregular Heartbeat Disorders": 0.3333,
+    "Weak Heart Muscle Conditions": 0.8667,
+    "Congenital Heart Defects": 0.3,
+    "Cardiovascular Defects": 0.5385
+  },
+  "trained_on": "918 patients",
+  "features_count": 11,
+  "features": [
+    "age",
+    "sex",
+    "chest_pain_type",
+    "resting_bp_s",
+    "cholesterol",
+    "fasting_blood_sugar",
+    "resting_ecg",
+    "max_heart_rate",
+    "exercise_angina",
+    "oldpeak",
+    "ST_slope"
+  ],
+  "dataset_source": "UCI Heart Disease Dataset (combined)",
+  "training_date": "2025-06-01",
+  "description": "Multi-class Naive Bayes classifier for 5 heart disease categories + Normal"
+}
