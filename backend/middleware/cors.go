@@ -10,9 +10,10 @@ import (
 
 func CORS() gin.HandlerFunc {
 	allowedOrigins := []string{
-		"https://heart-predict.vercel.app",
-		"http://localhost:3000",
-	}
+    "https://heart-predict.vercel.app",
+    "https://heart-predict-vcuh.vercel.app",
+    "http://localhost:3000",
+}
 	if extra := os.Getenv("ALLOWED_ORIGINS"); extra != "" {
 		allowedOrigins = append(allowedOrigins, strings.Split(extra, ",")...)
 	}
