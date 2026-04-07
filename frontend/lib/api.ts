@@ -6,8 +6,8 @@ import type {
   ReportRequest,
 } from "@/types/prediction";
 
-const BASE = process.env.NEXT_PUBLIC_API_URL ?? "https://heart-predict-api.onrender.com";
-const REMOTE_FALLBACK = "https://heart-predict-api.onrender.com";
+const BASE = process.env.NEXT_PUBLIC_API_URL ?? "https://heart-predict-7auc.onrender.com";
+const REMOTE_FALLBACK = "https://heart-predict-7auc.onrender.com";
 
 async function request<T>(
   method: "GET" | "POST",
