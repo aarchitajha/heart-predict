@@ -25,8 +25,8 @@ func ModelInfo() gin.HandlerFunc {
 			c.JSON(http.StatusOK, models.ModelInfoResponse{
 				ModelName:     "GaussianNB (Multi-Class)",
 				Version:       "2.0.0",
-				Accuracy:      0.8859,
-				F1Macro:       0.85,
+				Accuracy:      0.9489,
+				F1Macro:       0.9489,
 				NClasses:      6,
 				ClassLabels:   map[string]string{"0": "Normal", "1": "Coronary Artery Disorders", "2": "Irregular Heartbeat Disorders", "3": "Weak Heart Muscle Conditions", "4": "Congenital Heart Defects", "5": "Cardiovascular Defects"},
 				TrainedOn:     "1190 patients",

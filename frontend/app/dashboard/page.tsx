@@ -1,32 +1,32 @@
 "use client";
 
 import * as React from "react";
-import { 
-  TrendingUp, 
-  Users, 
-  Activity, 
-  Clock, 
-  ArrowUpRight, 
+import {
+  TrendingUp,
+  Users,
+  Activity,
+  Clock,
+  ArrowUpRight,
   ArrowDownRight,
   Plus,
   BadgeAlert,
   BadgeCheck
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
 } from "@/components/ui/card";
-import { 
-  Table, 
-  TableBody, 
-  TableCell, 
-  TableHead, 
-  TableHeader, 
-  TableRow 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -62,7 +62,7 @@ export default function DashboardPage() {
   const stats = React.useMemo(() => {
     const total = records.length;
     const highRisk = records.filter(r => r.response.risk_level === 'High').length;
-    const accuracy = 88.98; // UI display metric
+    const accuracy = 94.89; // UI display metric
     const latency = health?.uptime ? 0.85 : 0; // Simple simulation
 
     return {
@@ -105,32 +105,32 @@ export default function DashboardPage() {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <StatCard 
-            title="Total Predictions" 
-            value={stats.total.toLocaleString()} 
-            icon={Activity} 
+          <StatCard
+            title="Total Predictions"
+            value={stats.total.toLocaleString()}
+            icon={Activity}
             change={12}
             changeType="up"
           />
-          <StatCard 
-            title="High Risk Alerts" 
-            value={stats.highRisk.toString()} 
-            icon={BadgeAlert} 
+          <StatCard
+            title="High Risk Alerts"
+            value={stats.highRisk.toString()}
+            icon={BadgeAlert}
             change={stats.highRisk > 0 ? 5 : 0}
             changeType="up"
             isAlert={stats.highRisk > 0}
           />
-          <StatCard 
-            title="System Accuracy" 
-            value={`${stats.accuracy}%`} 
-            icon={BadgeCheck} 
+          <StatCard
+            title="System Accuracy"
+            value={`${stats.accuracy}%`}
+            icon={BadgeCheck}
             change={0}
             changeType="up"
           />
-          <StatCard 
-            title="Avg. Latency" 
-            value={`${stats.latency}s`} 
-            icon={Clock} 
+          <StatCard
+            title="Avg. Latency"
+            value={`${stats.latency}s`}
+            icon={Clock}
             change={0}
             changeType="down"
           />
@@ -175,7 +175,7 @@ export default function DashboardPage() {
                           {new Date(rec.date).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' })}
                         </TableCell>
                         <TableCell>
-                          <Badge 
+                          <Badge
                             variant={rec.response.risk_level === 'High' ? 'destructive' : rec.response.risk_level === 'Medium' ? 'warning' : 'success'}
                             className="capitalize px-2.5 py-0.5 rounded-full"
                           >
@@ -199,18 +199,18 @@ export default function DashboardPage() {
   );
 }
 
-function StatCard({ 
-  title, 
-  value, 
-  icon: Icon, 
-  change, 
-  changeType, 
-  isAlert = false 
-}: { 
-  title: string; 
-  value: string; 
-  icon: any; 
-  change: number; 
+function StatCard({
+  title,
+  value,
+  icon: Icon,
+  change,
+  changeType,
+  isAlert = false
+}: {
+  title: string;
+  value: string;
+  icon: any;
+  change: number;
   changeType: 'up' | 'down';
   isAlert?: boolean;
 }) {

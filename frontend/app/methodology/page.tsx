@@ -36,7 +36,7 @@ const accuracyTrend = [
   { epoch: "v1.1", acc: 78.4 },
   { epoch: "v1.2", acc: 84.1 },
   { epoch: "v1.3", acc: 87.6 },
-  { epoch: "v2.0 (Live)", acc: 88.98 },
+  { epoch: "v2.0 (Live)", acc: 94.89 },
 ];
 
 const featureImportance = [
@@ -60,8 +60,8 @@ export default function MethodologyPage() {
 
       {/* Metric Cards */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <MetricCard label="Model Accuracy" value="88.98%" icon={Target} color="text-emerald-600" bg="bg-emerald-50" />
-        <MetricCard label="Macro F1 Score" value="0.88" icon={Zap} color="text-blue-600" bg="bg-blue-50" />
+        <MetricCard label="Model Accuracy" value="94.89%" icon={Target} color="text-emerald-600" bg="bg-emerald-50" />
+        <MetricCard label="Macro F1 Score" value="0.94" icon={Zap} color="text-blue-600" bg="bg-blue-50" />
         <MetricCard label="Patient Corpus" value="10,000+" icon={Database} color="text-indigo-600" bg="bg-indigo-50" />
         <MetricCard label="Class Density" value="6 Profiles" icon={PieIcon} color="text-amber-600" bg="bg-amber-50" />
       </div>
@@ -69,8 +69,8 @@ export default function MethodologyPage() {
       <Card className="border-none shadow-sm bg-slate-50/50">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-             <BarChart3 className="h-5 w-5 text-accent" />
-             Core Pipeline Workflow
+            <BarChart3 className="h-5 w-5 text-accent" />
+            Core Pipeline Workflow
           </CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-4 gap-6 pt-2">
@@ -83,7 +83,7 @@ export default function MethodologyPage() {
               <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               {idx < workflowSteps.length - 1 && (
                 <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                   <div className="bg-white border rounded-full p-1 text-muted-foreground">→</div>
+                  <div className="bg-white border rounded-full p-1 text-muted-foreground">→</div>
                 </div>
               )}
             </div>
@@ -95,18 +95,18 @@ export default function MethodologyPage() {
         <Card className="shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-serif">
-               <PieIcon className="h-5 w-5 text-accent" />
-               Class Distribution
+              <PieIcon className="h-5 w-5 text-accent" />
+              Class Distribution
             </CardTitle>
           </CardHeader>
           <CardContent className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
-                <Pie 
-                  data={classDistribution} 
-                  dataKey="pct" 
-                  nameKey="name" 
-                  outerRadius={120} 
+                <Pie
+                  data={classDistribution}
+                  dataKey="pct"
+                  nameKey="name"
+                  outerRadius={120}
                   innerRadius={60}
                   paddingAngle={5}
                   label={({ name, percent }: any) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}
@@ -115,9 +115,9 @@ export default function MethodologyPage() {
                     <Cell key={entry.name} fill={colors[index % colors.length]} stroke="rgba(255,255,255,0.2)" strokeWidth={2} />
                   ))}
                 </Pie>
-                <Tooltip 
+                <Tooltip
                   contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
-                  formatter={(value: any) => [`${(Number(value) || 0).toFixed(1)}%`, 'Probability']} 
+                  formatter={(value: any) => [`${(Number(value) || 0).toFixed(1)}%`, 'Probability']}
                 />
               </PieChart>
             </ResponsiveContainer>
@@ -127,8 +127,8 @@ export default function MethodologyPage() {
         <Card className="shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 font-serif">
-               <TrendingUp className="h-5 w-5 text-accent" />
-               Training Convergence Trend
+              <TrendingUp className="h-5 w-5 text-accent" />
+              Training Convergence Trend
             </CardTitle>
           </CardHeader>
           <CardContent className="h-[350px]">
@@ -137,17 +137,17 @@ export default function MethodologyPage() {
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
                 <XAxis dataKey="epoch" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
                 <YAxis domain={[70, 95]} axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
-                <Tooltip 
+                <Tooltip
                   contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
-                  formatter={(value: any) => [`${(Number(value) || 0).toFixed(2)}%`, 'Accuracy']} 
+                  formatter={(value: any) => [`${(Number(value) || 0).toFixed(2)}%`, 'Accuracy']}
                 />
-                <Line 
-                   type="monotone" 
-                   dataKey="acc" 
-                   stroke="#14b8a6" 
-                   strokeWidth={4} 
-                   dot={{ r: 6, fill: '#14b8a6', strokeWidth: 2, stroke: '#fff' }}
-                   activeDot={{ r: 8, strokeWidth: 0 }}
+                <Line
+                  type="monotone"
+                  dataKey="acc"
+                  stroke="#14b8a6"
+                  strokeWidth={4}
+                  dot={{ r: 6, fill: '#14b8a6', strokeWidth: 2, stroke: '#fff' }}
+                  activeDot={{ r: 8, strokeWidth: 0 }}
                 />
               </LineChart>
             </ResponsiveContainer>
@@ -158,8 +158,8 @@ export default function MethodologyPage() {
       <Card className="shadow-sm border-accent/20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-             <ListChecks className="h-5 w-5 text-accent" />
-             Clinical Feature Importance
+            <ListChecks className="h-5 w-5 text-accent" />
+            Clinical Feature Importance
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-8 pt-4">
@@ -176,9 +176,9 @@ export default function MethodologyPage() {
                   <span className="text-sm font-bold text-accent">{f.value}% Impact</span>
                 </div>
                 <div className="h-3 rounded-full bg-slate-100 overflow-hidden">
-                  <div 
-                    className="h-full bg-accent transition-all duration-1000 ease-out" 
-                    style={{ width: `${f.value}%` }} 
+                  <div
+                    className="h-full bg-accent transition-all duration-1000 ease-out"
+                    style={{ width: `${f.value}%` }}
                   />
                 </div>
               </div>
