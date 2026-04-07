@@ -9,10 +9,27 @@ import (
 )
 
 func CORS() gin.HandlerFunc {
-	allowedOrigins := []string{
-    "https://heart-predict.vercel.app",
-    "https://heart-predict-vcuh.vercel.app",
-    "http://localhost:3000",
+        return func(c *gin.Context) {
+                origin := c.Request.Header.Get("Origin")
+                
+                // Allow all Vercel deployments + localhost
+                allowed := origin == "http://localhost:3000" ||
+                        strings.HasSuffix(origin, ".vercel.app") ||
+                        strings.HasSuffix(origin, "onrender.com")
+
+                if allowed {
+                        c.Header("Access-Control-Allow-Origin", origin)
+                        c.Header("Vary", "Origin")
+                }
+                c.Header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+                c.Header("Access-Control-Allow-Headers", "Content-Type, Accept")
+                c.Header("Access-Control-Max-Age", "86400")
+                if c.Request.Method == "OPTIONS" {
+                        c.AbortWithStatus(204)
+                        return
+                }
+                c.Next()
+        }
 }
 	if extra := os.Getenv("ALLOWED_ORIGINS"); extra != "" {
 		allowedOrigins = append(allowedOrigins, strings.Split(extra, ",")...)
